@@ -1,0 +1,118 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #c4c4c4;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 10px;
+    padding: 0; 
+}
+h2 { 
+	color: white;
+}
+h3,
+h4,
+h5 {
+	font-weight: 700
+}
+.select-style {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#fff, #fff 40%, #fff);
+   background-color: #fff;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #000;
+   font-size: inherit;
+   overflow: hidden;
+   padding: 2px 4px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+/* Table */
+.th{
+  text-align:center;
+  background-color: #876e97;
+  color: #000;
+}
+td{
+  text-align: center;
+}
+form {
+    display: inline;
+    margin-top: 0em;
+}
+input[type=range],output {
+	display: inline;
+	width: 50%;
+    line-height: 1.42857143;
+    color: #555;
+	font-weight: 700;
+}
+.graph {
+	width: 200px;
+	background-position: 95% center;
+}
+.bg-fedex-purple {
+    background-color: #660099
+}
+.img-center{
+	margin: 0 auto
+}
+.inline{
+    display:inline-block;
+}
+.section-heading {
+	color: #000;
+	margin-top: 10px;
+	margin-bottom: 10px
+}
+.home-td-left {
+	text-align: left;
+}
+.tr-border{ 
+  border: solid;
+  border-width: 2px 0;
+}
+.fa2 {
+    display: inline-block;
+    font: normal normal normal 22px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	color: green;
+}
+.fa3 {
+    display: inline-block;
+    font: normal normal normal 22px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	color: red;
+}
+.success {
+	font-size: 18px;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* IDENTIFIERS                                                 */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+#div_home_packages{
+  max-height: 525px;
+  margin-bottom: 0.5em;
+}
+#table_sort_params,#div_home_packages,
+#table_home_expecs, #table_home_suggests{
+	border:2px solid #000;
+}
+

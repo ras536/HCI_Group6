@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/visual.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
+	
+	<!-- Imported Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<title>FedEx Ramp Dashboard</title>
+</head>
+
+<body>
+  <!-- Header -->
+	<div class="bg-fedex-purple">
+		<section id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>FedEx Ramp Dashboard</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+  </div>
+
+  <div class="container">
+    <div id="wrapper" class="toggled">
+      <!-- sidebar -->
+      <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" style="margin-left: 0">
+        <li class="sidebar-brand">
+          <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;" >
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="index.html">
+          <i class="fa fa-home " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Home</span></a>
+        </li>
+        <li>
+          <a href="packages.html">
+          <i class="fa fa-cubes " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Packages</span></a>
+        </li>
+        <li>
+          <a href="planning.html">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Sort Planning</span></a>
+        </li>
+        <li>
+          <a href="visuals.html">
+		  <font color="white">
+          <i class="fa fa-area-chart " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Visuals</span></font></a>
+        </li>
+        <li>
+          <a href="suggestions.html">
+          <i class="fa fa-info-circle" aria-hidden="true"> </i>
+          <span style="margin-left:10px;"> Suggestions</span></a>
+        </li>
+        <li>
+          <a href="alerts.html">
+          <i class="fa fa-exclamation" aria-hidden="true"></i>
+          <span style="margin-left:10px;"> Alerts</span></a>
+        </li>
+        <li>
+          <a href="history.html">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span style="margin-left:10px;">History</span></a>
+        </li>
+      </ul>
+      </div><!-- /sidebar-wrapper -->
+      
+      <!-- PAGE CONTENT START -->
+     <!-- Visuals Grid Section -->
+		<section id="visual">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h3 class="section-heading">Sort Visuals</h3>
+						<hr>
+					</div>
+				</div>
+				<div class="row text-center">
+					<label for="daterange">Select Range:</label>
+					<input type="text" id="daterange" name="daterange" value="03/28/2017 - 03/28/2017" />
+				</div>
+				<br>
+				<div class="col-lg-12 row">
+					<div class="col-md-6 visual-item">
+						<div class="text-center">
+							<label for="graphSelect1">Graph:</label>
+							<select onchange="checkStatus()" id="graphSelect1" class="select-style graph">
+							  <option value="averageFlowRate" selected>Average Flow Rate</option>
+							  <option value="efficiency">Efficiency</option>
+							  <option value="totalPackages">Total Packages</option>
+							  <option value="totalEmployees">Total Employees</option>
+							</select>
+						</div>
+						<br>
+						<a class="visual-link">
+							<div class="visual-hover">
+								<div class="visual-hover-content">
+									<!-- ******** Can put hover content here if necessary -->
+								</div>
+							</div>
+							<div id="select1"></div>
+						</a>
+						<div id="caption-select1" class="visual-caption"></div>
+					</div>
+					<div class="col-md-6 visual-item">
+						<div class="text-center">
+							<label for="graphSelect2">Graph:</label>
+							<select onchange="checkStatus()" id="graphSelect2" class="select-style graph">
+							  <option value="averageFlowRate">Average Flow Rate</option>
+							  <option value="efficiency" selected >Efficiency</option>
+							  <option value="totalPackages">Total Packages</option>
+							  <option value="totalEmployees">Total Employees</option>
+							</select>
+						</div>
+						<br>
+						<a class="visual-link">
+							<div class="visual-hover">
+								<div class="visual-hover-content">
+								</div>
+							</div>
+							<div id="select2"></div>
+						</a>
+						<div id="caption-select2" class="visual-caption"></div>
+					</div>
+					<div class="col-md-6 visual-item">
+						<div class="text-center">
+							<label for="graphSelect3">Graph:</label>
+							<select onchange="checkStatus()" id="graphSelect3" class="select-style graph">
+								<option value="averageFlowRate">Average Flow Rate</option>
+								<option value="efficiency">Efficiency</option>
+								<option value="totalPackages" selected >Total Packages</option>
+								<option value="totalEmployees">Total Employees</option>
+							</select>
+						</div>
+						<br>
+						<a class="visual-link">
+							<div class="visual-hover">
+								<div class="visual-hover-content">
+								</div>
+							</div>
+							<div id="select3"></div>
+						</a>
+						<div id="caption-select3" class="visual-caption"></div>
+					</div>
+					<div class="col-md-6 visual-item">
+						<div class="text-center">
+							<label for="graphSelect4">Graph:</label>
+							<select onchange="checkStatus()" id="graphSelect4" class="select-style graph">
+								<option value="averageFlowRate">Average Flow Rate</option>
+								<option value="efficiency">Efficiency</option>
+								<option value="totalPackages">Total Packages</option>
+								<option value="totalEmployees" selected >Total Employees</option>
+							</select>
+						</div>
+						<br>
+						<a class="visual-link">
+							<div class="visual-hover">
+								<div class="visual-hover-content">
+								</div>
+							</div>
+							<div id="select4"></div>
+						</a>
+						<div id="caption-select4" class="visual-caption"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+      <!-- PAGE CONTENT END  -->
+    </div> <!-- /wrapper -->
+  </div> <!-- /container -->
+  
+</body>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+
+  
+<!-- MAIN SCRIPT -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+<script type="text/javascript">
+	$(function() {
+		$('input[name="daterange"]').daterangepicker();
+	});
+</script>
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+
+function checkStatus (evt)
+{
+	var graphSelect1 = document.getElementById("graphSelect1").value;
+	var graphSelect2 = document.getElementById("graphSelect2").value;
+	var graphSelect3 = document.getElementById("graphSelect3").value;
+	var graphSelect4 = document.getElementById("graphSelect4").value;
+	
+	//For first graph option
+	if (graphSelect1 == "averageFlowRate") {
+		document.getElementById("select1").innerHTML = "<img src=\"img/visual/visFlowRate.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select1").innerHTML = "<h4>Average Flow Rate</h4>";
+	} else if (graphSelect1 == "totalEmployees") {
+		document.getElementById("select1").innerHTML = "<img src=\"img/visual/visEmployees.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select1").innerHTML = "<h4>Total Number of Employees</h4>";
+	} else if (graphSelect1 == "totalPackages") {
+		document.getElementById("select1").innerHTML = "<img src=\"img/visual/visPackages.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select1").innerHTML = "<h4>Total Packages Received</h4>";
+	} else if (graphSelect1 == "efficiency"){ 
+		document.getElementById("select1").innerHTML = "<img src=\"img/visual/visEfficiency.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select1").innerHTML = "<h4>Efficiency: Flow Rate/Employee</h4>";
+	}
+	
+	//For second graph option
+	if (graphSelect2 == "averageFlowRate") {
+		document.getElementById("select2").innerHTML = "<img src=\"img/visual/visFlowRate.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select2").innerHTML = "<h4>Average Flow Rate</h4>";
+	} else if (graphSelect2 == "totalEmployees") {
+		document.getElementById("select2").innerHTML = "<img src=\"img/visual/visEmployees.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select2").innerHTML = "<h4>Total Number of Employees</h4>";
+	} else if (graphSelect2 == "totalPackages") {
+		document.getElementById("select2").innerHTML = "<img src=\"img/visual/visPackages.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select2").innerHTML = "<h4>Total Packages Received</h4>";
+	} else if (graphSelect2 == "efficiency"){ 
+		document.getElementById("select2").innerHTML = "<img src=\"img/visual/visEfficiency.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select2").innerHTML = "<h4>Efficiency: Flow Rate/Employee</h4>";
+	}
+	
+	//For third graph option
+	if (graphSelect3 == "averageFlowRate") {
+		document.getElementById("select3").innerHTML = "<img src=\"img/visual/visFlowRate.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select3").innerHTML = "<h4>Average Flow Rate</h4>";
+	} else if (graphSelect3 == "totalEmployees") {
+		document.getElementById("select3").innerHTML = "<img src=\"img/visual/visEmployees.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select3").innerHTML = "<h4>Total Number of Employees</h4>";
+	} else if (graphSelect3 == "totalPackages") {
+		document.getElementById("select3").innerHTML = "<img src=\"img/visual/visPackages.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select3").innerHTML = "<h4>Total Packages Received</h4>";
+	} else if (graphSelect3 == "efficiency"){ 
+		document.getElementById("select3").innerHTML = "<img src=\"img/visual/visEfficiency.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select3").innerHTML = "<h4>Efficiency: Flow Rate/Employee</h4>";
+	}
+	
+	//For fourth graph option
+	if (graphSelect4 == "averageFlowRate") {
+		document.getElementById("select4").innerHTML = "<img src=\"img/visual/visFlowRate.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select4").innerHTML = "<h4>Average Flow Rate</h4>";
+	} else if (graphSelect4 == "totalEmployees") {
+		document.getElementById("select4").innerHTML = "<img src=\"img/visual/visEmployees.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select4").innerHTML = "<h4>Total Number of Employees</h4>";
+	} else if (graphSelect4 == "totalPackages") {
+		document.getElementById("select4").innerHTML = "<img src=\"img/visual/visPackages.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select4").innerHTML = "<h4>Total Packages Received</h4>";
+	} else if (graphSelect4 == "efficiency"){ 
+		document.getElementById("select4").innerHTML = "<img src=\"img/visual/visEfficiency.png\" class=\"visual-img-responsive\" alt=\"\">";
+		document.getElementById("caption-select4").innerHTML = "<h4>Efficiency: Flow Rate/Employee</h4>";
+	}
+	
+}
+checkStatus();
+
+</script>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	
+	<!-- Imported Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<title>FedEx Ramp Dashboard</title>
+</head>
+
+<body>
+  <!-- Header -->
+	<div class="bg-fedex-purple">
+		<section id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>FedEx Ramp Dashboard</h2>
+          </div>
+        </div>
+      </div>
+		</section>
+  </div>
+
+  <div class="container">
+    <div id="wrapper" class="toggled">
+      <!-- sidebar -->
+      <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" style="margin-left: 0">
+        <li class="sidebar-brand">
+          <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;" >
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="index.html">
+          <i class="fa fa-home " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Home</span></a>
+        </li>
+        <li>
+          <a href="packages.html">
+          <i class="fa fa-cubes " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Packages</span></a>
+        </li>
+        <li>
+          <a href="planning.html">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Sort Planning</span></a>
+        </li>
+        <li>
+          <a href="visuals.html">
+          <i class="fa fa-area-chart " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Visuals </span> </a>
+        </li>
+        <li>
+          <a href="suggestions.html">
+          <i class="fa fa-info-circle" aria-hidden="true"> </i>
+          <span style="margin-left:10px;"> Suggestions</span></a>
+        </li>
+        <li>
+          <a href="alerts.html">
+          <i class="fa fa-exclamation" aria-hidden="true"></i>
+          <span style="margin-left:10px;"> Alerts</span></a>
+        </li>
+        <li>
+          <a href="history.html">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span style="margin-left:10px;">History</span></a>
+        </li>
+      </ul>
+      </div><!-- /sidebar-wrapper -->
+      
+      <!-- PAGE CONTENT START -->
+	  <div class="container">
+      <h2 class="section-heading">Alerts</h2>
+	  </div>
+      <!-- PAGE CONTENT END  -->
+    </div> <!-- /wrapper -->
+  </div> <!-- /container -->
+  
+</body>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+  
+<!-- MAIN SCRIPT -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+</html>

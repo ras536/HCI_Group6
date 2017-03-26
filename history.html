@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+  <link href="css/map278.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	
+	<!-- Imported Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<title>FedEx Ramp Dashboard</title>
+</head>
+
+<body>
+  <!-- Header -->
+	<div class="bg-fedex-purple">
+		<section id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>FedEx Ramp Dashboard</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+  <div class="container">
+    <div id="wrapper" class="toggled">
+      <!-- sidebar -->
+      <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" style="margin-left: 0">
+        <li class="sidebar-brand">
+          <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;" >
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="index.html">
+          <i class="fa fa-home " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Home</span></a>
+        </li>
+        <li>
+          <a href="packages.html">
+          <i class="fa fa-cubes " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Packages</span></a>
+        </li>
+        <li>
+          <a href="planning.html">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Sort Planning</span></a>
+        </li>
+        <li>
+          <a href="visuals.html">
+          <i class="fa fa-area-chart " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Visuals </span> </a>
+        </li>
+        <li>
+          <a href="suggestions.html">
+          <i class="fa fa-info-circle" aria-hidden="true"> </i>
+          <span style="margin-left:10px;"> Suggestions</span></a>
+        </li>
+        <li>
+          <a href="alerts.html">
+          <i class="fa fa-exclamation" aria-hidden="true"></i>
+          <span style="margin-left:10px;"> Alerts</span></a>
+        </li>
+        <li>
+          <a href="history.html">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span style="margin-left:10px;">History</span></a>
+        </li>
+      </ul>
+      </div><!-- /sidebar-wrapper -->
+      
+      <!-- PAGE CONTENT START -->
+	  <div class = "container">
+		<div class="col-lg-12 text-center">
+			<h3 class="section-heading">Sort History</h3>
+			<hr>
+		</div>
+      
+      <div class="table-responsive col-lg-12">
+      <table id="table_sort_params" class="table table-striped">
+        <tr class="tr-border">
+          <th class="right"><b>Average</b></th>
+          <th class="right"><b>Last 3 Months</b></th>
+          <th class="right"><b>Last 6 Months</b></th>
+          <th class="right"><b>Last 12 Months</b></th>
+          <th class="right"><b>Last 36 Months</b></th>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Packages Per Sort</b></td>
+          <td align="right">13378</td>
+          <td align="right">14087</td>
+          <td align="right">14121</td>
+          <td align="right">16489</td>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Employee Count</b></td>
+          <td align="right">17.69</td>
+          <td align="right">17.02</td>
+          <td align="right">17.38</td>
+          <td align="right">16.89</td>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Flow Rate</b></td>
+          <td align="right">7456/hr</td>
+          <td align="right">7852/hr</td>
+          <td align="right">7749/hr</td>
+          <td align="right">7212/hr</td>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Completion Time</b></td>
+          <td align="right">6:52am</td>
+          <td align="right">6:49am</td>
+          <td align="right">6:46am</td>
+          <td align="right">6:55am</td>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Late Sort Count</b></td>
+          <td align="right">2</td>
+          <td align="right">3</td>
+          <td align="right">6</td>
+          <td align="right">26</td>
+        </tr>
+      </table>
+      </div>
+	  </div>
+      <!-- PAGE CONTENT END  -->
+    </div> <!-- /wrapper -->
+  </div> <!-- /container -->
+  
+</body>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+  
+<!-- MAIN SCRIPT -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+</html>

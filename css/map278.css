@@ -1,0 +1,27 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* DOM ELEMENTS                                                */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Headings */
+h3{
+}
+
+/* Table */
+th{
+  text-align:center;
+  background-color: #876e97;
+  color: #000;
+}
+
+td{
+  text-align: center;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* IDENTIFIERS                                                 */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+#div_incoming_packages{
+  max-height: 480px;
+  margin-bottom: 0.5em;
+}

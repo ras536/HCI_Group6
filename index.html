@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/home.css" rel="stylesheet">
+	
+	<!-- Imported Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<title>FedEx Ramp Dashboard</title>
+</head>
+
+<body>
+  <!-- Header -->
+	<div class="bg-fedex-purple">
+		<section id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>FedEx Ramp Dashboard</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+  <div class="container">
+    <div id="wrapper" class="toggled">
+      <!-- sidebar -->
+      <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" style="margin-left: 0">
+        <li class="sidebar-brand">
+          <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;" >
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i></a>
+        </li>
+        <li class="currentPage">
+          <a href="index.html">
+		  <font color="white">
+          <i class="fa fa-home " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Home</span></font></a>
+        </li>
+        <li>
+          <a href="packages.html">
+          <i class="fa fa-cubes " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Packages</span></a>
+        </li>
+        <li>
+          <a href="planning.html">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Sort Planning</span></a>
+        </li>
+        <li>
+          <a href="visuals.html">
+          <i class="fa fa-area-chart " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Visuals </span> </a>
+        </li>
+        <li>
+          <a href="suggestions.html">
+          <i class="fa fa-info-circle" aria-hidden="true"> </i>
+          <span style="margin-left:10px;"> Suggestions</span></a>
+        </li>
+        <li>
+          <a href="alerts.html">
+          <i class="fa fa-exclamation" aria-hidden="true"></i>
+          <span style="margin-left:10px;"> Alerts</span></a>
+        </li>
+        <li>
+          <a href="history.html">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span style="margin-left:10px;">History</span></a>
+        </li>
+      </ul>
+      </div><!-- /sidebar-wrapper -->
+      
+      <!-- PAGE CONTENT START -->
+      <section id="home">
+			<div class="container">
+				<div class="col-lg-12 row">
+					<div  class="col-md-4 home-item">
+						<div>
+							<h3 class="home-caption">Packages</h3>
+						</div>
+						<div id="div_home_packages" class = "table-responsive">
+							<table id="table_incoming_packages" class="table table-striped">
+								<tr>
+									<th class="th">Carrier</th>
+									<th class="th">Volume</th>
+									<th class="th">Arrival Time</th>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-4 home-item">
+						<div>
+							<h3 class="home-caption">Parameters</h3>
+						</div>
+						<div id="home_parameters" class ="table-responsive">
+							<table id="table_sort_params" class="table table-striped">
+								<tr class="tr-border">
+									<td><label for="startTime">Start Time:</label></td>
+									<td class = "home-td-left">
+										<form>
+											<input type="time" name="usr_time">
+										</form>
+									</td>
+								</tr>
+								<tr class="tr-border">
+									<td><label for="flowRate">Flow Rate:</label></td>
+									<td class = "home-td-left">
+										<form oninput="x.value=parseInt(a.value)">
+											0
+											<input onchange="checkStatus()" type="range" id="a" value="4257" min="0" max="10000">
+											10k = 
+											<output name="x" id="x" for="a">4257</output>
+										</form>
+									</td>
+								</tr>
+								<tr class="tr-border">
+									<td><label>Packages:</label></td>
+									<td class = "home-td-left">
+										<form oninput="y.value=parseInt(b.value)">
+										0
+										<input onchange="checkStatus()" type="range" id="b" value="15248" min="0" max="20000">
+										20k = 
+										<output name="y" id="y" for="b">15248</output>
+										</form>
+									</td>
+								</tr>
+								<tr class="tr-border">
+									<td><label>Employees:</label></td>
+									<td class = "home-td-left">
+										<form oninput="z.value=parseInt(c.value)">
+										0
+										<input onchange="checkStatus()" type="range" id="c" value="27" min="0" max="100">
+										100 = 
+										<output name="z" id="z" for="c">27</output>
+										</form>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="row">
+							<div class="col-md-12 home-item">
+								<div>
+									<h3 class="home-caption">Visuals</h3>
+								</div>
+								<a class="home-link">
+									<div class="home-hover">
+										<div class="home-hover-content">
+										</div>
+									</div>
+									<img src="img/home/Visuals.png" class="home-img-responsive" alt="">
+								</a>						
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 home-item">
+						<div>
+							<h3 class="home-caption">Expectations</h3>
+						</div>
+						<div id="home_expecs" class ="table-responsive">
+							<table id="table_home_expecs" class="table table-striped">
+								<tr class="tr-border">
+									<td><label>Completion Time:</label></td>
+									<td class = "home-td-left"><label>6:48am</label></td>
+								</tr>
+								<tr class="tr-border">
+									<td><label>Sort Duration:</label></td>
+									<td class = "home-td-left"><label>2 hours, 48 minutes</label></td>
+								</tr>
+								<tr class="tr-border">
+									<td><label>Deviation (+/-):</label></td>
+									<td class = "home-td-left"><label>8 Minutes</label></td>
+								</tr>
+								<tr class="tr-border">
+									<td><label>Result Window:</label></td>
+									<td class = "home-td-left"><label>6:40am - 6:56am</label></td>
+								</tr>
+								<tr class="tr-border">
+									<td><label>Predicted Sort Status:</label></td>
+									<td id="estStatus"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="row">
+							<div class="col-md-12 home-item">
+								<div>
+									<h3 class="home-caption">Suggestions</h3>
+								</div>
+								<div id="home_suggests" class ="table-responsive">
+									<table id="table_home_suggests" class="table table-striped">
+										<tr class="tr-border">
+											<td class = "home-td-left"><label>Adding two additional employees to the shift would
+											decrease the overall sort time by 14 minutes.</label></td>
+											
+										</tr>
+										<tr class="tr-border">
+											<td class = "home-td-left"><label>Beginning the sort at 4:24am instead of at 4:48am
+											would provide you with an estimated 15 minutes of contingency 
+											time for completing the sort on schedule.</label></td>
+										</tr>
+										<tr class="tr-border">
+											<td class = "home-td-left"><label>Based on the current parameters, this sort 
+											should be completed on time.</label></td>
+										</tr>
+									</table>
+								</div>					
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+      <!-- PAGE CONTENT END  -->
+    </div> <!-- /wrapper -->
+  </div> <!-- /container -->
+  
+</body>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/home-packages.js"></script>
+  
+<!-- MAIN SCRIPT -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+
+function checkStatus (evt)
+{
+	var a = document.getElementById("a").value;
+	var b = document.getElementById("b").value;
+	var c = document.getElementById("c").value;
+	
+	if (a < 3000) {
+		document.getElementById("estStatus").innerHTML = "<label class=\"fa3 fa-times\" aria-hidden=\"true\"></label><label class=\"success\">&nbsp;Unsuccessful</label>";
+	} else if (b > 16000) {
+		document.getElementById("estStatus").innerHTML = "<label class=\"fa3 fa-times\" aria-hidden=\"true\"></label><label class=\"success\">&nbsp;Unsuccessful</label>";
+	} else if (c < 25) {
+		document.getElementById("estStatus").innerHTML = "<label class=\"fa3 fa-times\" aria-hidden=\"true\"></label><label class=\"success\">&nbsp;Unsuccessful</label>";
+	} else { 
+		document.getElementById("estStatus").innerHTML = "<label class=\"fa2 fa-check\" aria-hidden=\"true\"></label><label class=\"success\">&nbsp;Successful</label>";
+	}
+}
+checkStatus();
+
+</script>
+</html>

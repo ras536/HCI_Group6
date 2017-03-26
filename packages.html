@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+  <link href="css/map278.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	
+	<!-- Imported Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<title>FedEx Ramp Dashboard</title>
+  
+    <!--Load the AJAX API for Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+	<div class="bg-fedex-purple">
+		<section id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>FedEx Ramp Dashboard</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+  <div class="container">
+    <div id="wrapper" class = "toggled">
+      <!-- sidebar -->
+      <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" style="margin-left: 0">
+        <li class="sidebar-brand">
+          <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;" >
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="index.html">
+          <i class="fa fa-home " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Home</span></a>
+        </li>
+        <li>
+          <a href="packages.html">
+          <i class="fa fa-cubes " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Packages</span></a>
+        </li>
+        <li>
+          <a href="planning.html">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Sort Planning</span></a>
+        </li>
+        <li>
+          <a href="visuals.html">
+          <i class="fa fa-area-chart " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Visuals </span> </a>
+        </li>
+        <li>
+          <a href="suggestions.html">
+          <i class="fa fa-info-circle" aria-hidden="true"> </i>
+          <span style="margin-left:10px;"> Suggestions</span></a>
+        </li>
+        <li>
+          <a href="alerts.html">
+          <i class="fa fa-exclamation" aria-hidden="true"></i>
+          <span style="margin-left:10px;"> Alerts</span></a>
+        </li>
+        <li>
+          <a href="history.html">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span style="margin-left:10px;">History</span></a>
+        </li>
+      </ul>
+      </div><!-- /sidebar-wrapper -->
+      
+      <!-- PAGE CONTENT START -->
+	  <div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h3 class="section-heading">Packages</h3>
+				<hr>
+			</div>
+		</div>
+      
+      <!-- Planned Package Volume -->
+      <h3>Planned Package Volume</h3>
+      <div class="table-responsive">
+      <table id="table_planned_volume" class="table table-striped">
+      <tr>
+        <th>Station ID</th>
+        <th>Ramp Volume IN</th>
+        <th>Trucks Volume IN</th>
+        <th>Ramp Volume OUT</th>
+        <th>Trucks Volume OUT</th></tr>
+      <tr>
+        <td>ABQA</td>
+        <td><input type="text" style="text-align:center" value="8500"  /></td>
+        <td><input type="text" style="text-align:center" value="5" /></td>
+        <td><input type="text" style="text-align:center" value="8000" /></td>
+        <td><input type="text" style="text-align:center" value="5" /></td></tr>
+      <tr>
+        <td>FMNA</td>
+        <td><input type="text" style="text-align:center" value="1800" /></td>
+        <td><input type="text" style="text-align:center" value="2" /></td>
+        <td><input type="text" style="text-align:center" value="2500" /></td>
+        <td><input type="text" style="text-align:center" value="2" /></td></tr>
+      <tr>
+        <td>GUPA</td>
+        <td><input type="text" style="text-align:center" value="2700" /></td>
+        <td><input type="text" style="text-align:center" value="2" /></td>
+        <td><input type="text" style="text-align:center" value="2000" /></td>
+        <td><input type="text" style="text-align:center" value="2" /></td></tr>
+      <tr>
+        <td>SAFA</td>
+        <td><input type="text" style="text-align:center" value="6500" /></td>
+        <td><input type="text" style="text-align:center" value="4" /></td>
+        <td><input type="text" style="text-align:center" value="7000" /></td>
+        <td><input type="text" style="text-align:center" value="4" /></td></tr>
+      </table>
+      </div>
+      
+      <!-- Incoming Packages -->
+      <!-- https://developers.google.com/chart/interactive/docs/examples -->
+      <h3>Incoming Packages</h3>
+      <div id="div_table_incoming">
+      </div>
+      
+      <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_package">Contact Courier</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_package">Settings</button>
+      
+      <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
+      <div id="modal_package" class="modal fade">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- HEADER -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- BODY -->
+        <div class="modal-body">
+          <p>Put Stuff Here</p>
+        </div>
+        <!-- FOOTER -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      <div class="spacex"><hr /></div>
+	  </div>
+      <!-- PAGE CONTENT END  -->      
+    </div> <!-- /wrapper -->
+  </div> <!-- /container -->    
+</body>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+  
+<!-- MAIN SCRIPT -->
+<script>
+//
+// GLOBAL VARIABLES
+//
+var table_incoming = null;  // a google charts data table; global for event handling
+var data = null; // google charts datatable; global for event handling
+
+//
+// FUNCTIONS
+//
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+
+// Create a new truck/plane with a volume and arrival time
+// and insert it into the Package Breakdown table
+// Reference: https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/insertRow
+function makeIncomingPackage(){
+  try{    
+    // Vehicle
+    var vehicle_array = ["<i class=\"fa fa-truck\" aria-hidden=\"true\"></i>", 
+                         "<i class=\"fa fa-plane\" aria-hidden=\"true\"></i>"];
+    var vehicle_index = Math.floor( Math.random()*2 );  // [0, 1]        
+    var text_vehicle = vehicle_array[vehicle_index];
+    
+    // Source
+    var source_list = ["ABQA", "FMNA", "GUPA", "SAFA"];
+    var source_index = Math.floor( Math.random()*source_list.length );  // [0, size - 1]
+    var text_source = source_list[ source_index ];
+    
+    // Volume
+    var volume_truck_min = 100;
+    var volume_truck_max = 2000;
+    var volume_plane_min = 1000;
+    var volume_plane_max = 20000;
+    var text_volume; 
+    if( vehicle_index == 0 ){
+      var volume_random = Math.floor( Math.random()*volume_truck_max + volume_truck_min );
+      text_volume = volume_random;
+    }else{
+      var volume_random = Math.floor( Math.random()*volume_plane_max + volume_plane_min );
+      text_volume = volume_random;
+    }
+    
+    // Time
+    var hour_random = Math.floor( Math.random()*12 + 1 ); // [1, 12]
+    var minute_random = Math.floor( Math.random()*59 + 1 ); // [1, 59]
+    if( minute_random < 10 ){
+      minute_random = "0" + minute_random;
+    }
+    var pm_random = Math.floor( Math.random()*2 ); // [0, 1]
+    var text_ampm = "am";
+    if( pm_random == 1 ){
+      text_ampm = "pm";
+    }
+    var text_time = hour_random + ":" + minute_random + text_ampm;
+    
+    // Status
+    var status_array = ["<i class=\"fa fa-check-circle\" aria-hidden=\"true\"></i>",
+                        "<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>",
+                        "<i class=\"fa fa-times-circle\" aria-hidden=\"true\"></i>"];
+    var status_index = Math.floor( Math.random()*3 );
+    var text_status = status_array[ status_index ];
+
+    return new Array(String(text_vehicle), 
+                    String(text_source), 
+                    String(text_volume), 
+                    String(text_time), 
+                    String(text_status));
+  }
+  catch( e ){
+    alert("makIncomingPackage:\n" + e);
+  }
+}
+
+function drawChart(){
+    // Reference: https://developers.google.com/chart/interactive/docs/examples
+    data = new google.visualization.DataTable();
+    data.addColumn('string', 'Carrier');
+    data.addColumn('string', 'Source');
+    data.addColumn('string', 'Volume');
+    data.addColumn('string', 'Arrival Time');
+    data.addColumn('string', 'Status');
+    
+    data.addRows(30);
+    for(row = 0; row < 30; row++){
+      var p = makeIncomingPackage();
+      data.setCell(row, 0, p[0]);
+      data.setCell(row, 1, p[1]);
+      data.setCell(row, 2, p[2]);
+      data.setCell(row, 3, p[3]);
+      data.setCell(row, 4, p[4]);
+    }
+    
+    table_incoming = new google.visualization.Table( document.getElementById("div_table_incoming") );
+    table_incoming.draw(data, {width: '100%', height: '320px', allowHtml: true});
+    google.visualization.events.addListener(table_incoming, 'select', tableSelectHandler);
+}
+
+// Reference: https://developers.google.com/chart/interactive/docs/events
+function tableSelectHandler(){  
+  try{
+    var sel = table_incoming.getSelection();
+    for(var i = 0; i < sel.length; i++){
+      var item = sel[i];
+      var row_int = item.row;
+      if( !row_int ) row_int = 0;
+      
+      //alert( data.getFormattedValue(row_int, 0) );
+      //alert( data.getFormattedValue(row_int, 1) );
+      //alert( data.getFormattedValue(row_int, 2) );
+      //alert( data.getFormattedValue(row_int, 3) );
+      //alert( data.getFormattedValue(row_int, 4) );
+    }
+  }catch( err ){
+    alert( err );
+  }
+}
+
+// DOCUMENT LOADED
+window.onload = function(){
+  try{
+    google.charts.load('current', {'packages' : ['corechart', 'table']});
+    google.charts.setOnLoadCallback( drawChart );
+    
+    // Update the margin because css doesn't work for the dynamically created table.
+    document.getElementById("div_table_incoming").setAttribute("style", "margin-bottom: 2.0em;");
+  }
+  catch( e ){
+    alert(e);
+  }
+}
+</script>
+</html>
