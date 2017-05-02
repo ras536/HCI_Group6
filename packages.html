@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 
 <html lang="en">
 
@@ -121,14 +121,12 @@
 				<hr>
 			</div>
 		</div>
-      
-    <!-- INCOMING PACKAGES -->
-    <!-- https://developers.google.com/chart/interactive/docs/examples -->
-    <div id="div_table_incoming">
-    </div>    
-      
+    
     <!-- Filter -->
-    <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Filter</div>
+      <div class="panel-body">
+      <div class="col-lg-12">
         <div class="row">
           <!-- STATION -->
           <table>
@@ -143,10 +141,8 @@
             <option value="SAFA">SAFA</option>
           </td>
           </select>
-          </tr>
           
           <!-- CARRIER NUMBER -->
-          <tr>
           <td><b>Carrier #</b></td>
           <td><input id="filter_number" type="text" value ="" oninput="filterChart()"/></td>
           </tr>
@@ -155,10 +151,8 @@
           <tr>
           <td><b>Max Volume</b></td>
           <td><input id="filter_volume" type="text" value="20000" /></td>
-          </tr>
           
           <!-- TIME -->
-          <tr>
           <td><b>Arrival Time</b></td>
           <td><input id="filter_time"type="time" style="width:100%"/></td>
           </tr>
@@ -173,25 +167,32 @@
             <option value="times">Error</option>
           </select>
           </td>
-          <td>
-            <!-- BUTTONS -->
-            <button id="btn_filter_clear" type="button float-left" onClick="clearFilter()">Clear</button>
-            <button id="btn_filter_apply" type="button float-left" onClick="filterChart()">Apply</button>
-          </td>
           </tr>
-          
+          <tr><td colspan="4"><hr /></td></tr>
           <tr>
             <td>
-              <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_package">Contact Station</button>
+              <!-- BUTTONS -->
+              <button id="btn_filter_clear" type="button float-left" onClick="clearFilter()">Clear</button>
+            </td>
+            <td colspan="3">
+              <button id="btn_filter_apply" type="button float-left" onClick="filterChart()" style="float:right">Apply</button>
             </td>
           </tr>
           </table>
-          
+          <br/ >
         </div>
       </div>
-      <br /><br />
-           
+      </div>
+    </div>
+      
+    <!-- INCOMING PACKAGES -->
+    <!-- https://developers.google.com/chart/interactive/docs/examples -->
+    <div id="div_table_incoming">
+    </div>    
+    
+    <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_package">Contact Station</button>
+      
       <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
       <div id="modal_package" class="modal fade">
       <div class="modal-dialog" role="document">

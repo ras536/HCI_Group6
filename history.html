@@ -123,13 +123,15 @@
       <table id="table_sort_params" class="table table-striped">
         <tr class="tr-border">
           <th class="right history-th"><b>Average</b></th>
-          <th class="right history-th"><b>Last Week</b></th>
+		  <th class="right history-th" id="last_sort"><b>5/1/17</b></th>
+          <th class="right history-th"><b>Last Month</b></th>
           <th class="right history-th"><b>Prior Month</b></th>
           <th class="right history-th"><b>Prior 3 Months</b></th>
           <th class="right history-th"><b>Prior 6 Months</b></th>
         </tr>
         <tr class="tr-border">
           <td align="right"><b>Packages Per Sort</b></td>
+		  <td alight="right">14745</td>
           <td align="right">13378</td>
           <td align="right">14087</td>
           <td align="right">14121</td>
@@ -137,6 +139,7 @@
         </tr>
         <tr class="tr-border">
           <td align="right"><b>Employee Count</b></td>
+		  <td aligh="right">17.45</td>
           <td align="right">17.69</td>
           <td align="right">17.02</td>
           <td align="right">17.38</td>
@@ -144,6 +147,7 @@
         </tr>
         <tr class="tr-border">
           <td align="right"><b>Flow Rate</b></td>
+		  <td align="right">7734/hr</td>
           <td align="right">7456/hr</td>
           <td align="right">7852/hr</td>
           <td align="right">7749/hr</td>
@@ -151,6 +155,7 @@
         </tr>
         <tr class="tr-border">
           <td align="right"><b>Completion Time</b></td>
+		  <td align="right">6:50am</td>
           <td align="right">6:52am</td>
           <td align="right">6:49am</td>
           <td align="right">6:46am</td>
@@ -158,10 +163,11 @@
         </tr>
         <tr class="tr-border">
           <td align="right"><b>Late Sort Count</b></td>
-          <td align="right">2</td>
+		  <td align="right">No</td>
+          <td align="right">0</td>
+          <td align="right">1</td>
           <td align="right">3</td>
-          <td align="right">6</td>
-          <td align="right">11</td>
+          <td align="right">4</td>
         </tr>
       </table>
       </div>
@@ -242,6 +248,12 @@ $("#menu-toggle").click(function(e) {
 	
 	var curDate = document.getElementById("curDate");
 	curDate.innerHTML = "<p class='header-info'>Date: " + date + "</p>";
+	
+	var last_sort = document.getElementById("last_sort");
+	last_sort.innerHTML = date.setDate(date.getDate()-1);
+	
+	
+	
 </script>
 <script>
 	function updateUser() {

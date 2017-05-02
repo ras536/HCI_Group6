@@ -19,7 +19,7 @@
 	background-color: rgba(41, 115, 187, 0.85);
 }
 .alert-text {
-	color: black;
+	color: white;
 	font-weight: 700;
 }
 .fa-large {
@@ -49,7 +49,7 @@
 /* The close button */
 .closebtn {
     margin-left: 15px;
-    color: black;
+    color: white;
     font-weight: bold;
     float: right;
     font-size: 22px;
@@ -63,6 +63,6 @@
 
 /* When moving the mouse over the close button */
 .closebtn:hover {
-    color: black;
+    color: #D3D3D3;
 }
 

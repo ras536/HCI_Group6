@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+  <link href="css/map278.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/user_dropdown.css" rel="stylesheet">
+	
+	<!-- Imported Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<title>FedEx Ramp Dashboard</title>
+  
+    <!--Load the AJAX API for Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+	<div class="bg-fedex-purple">
+		<section id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center ">
+						<div class="col-xs-3">
+							<div class="row">
+								<h4>
+									<p class="header-info" id="userName">User: JDOE</p>
+								</h4>
+							</div>
+							<div class="row">
+								<h4 id="curDate"></h4>
+								
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<h1>FedEx Ramp Dashboard</h1>
+						</div>
+						<div class="col-xs-3">
+							<h2>
+								<a href = "alerts.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+									<div class="alert-button">
+										<i class="fa fa-exclamation-triangle"></i>
+										<span class="button__badge" id="button_badge">6</span>
+									</div>
+								</a>
+								<div id='cssmenu'>
+									<ul>
+										<li class="has-sub fa fa-user header-icon" aria-hidden="true">
+											<ul>
+												<li class='has-sub'><a href='#'><span>Settings</span></a></li>
+												<li class='has-sub'><a href='login.html'><span>Logout</span></a></li>	
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<p class="fa fa-download"></p>
+							</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+  <div class="container">
+    <div id="wrapper" class = "toggled">
+      <!-- sidebar -->
+      <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" style="margin-left: 0">
+        <li class="sidebar-brand">
+          <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;" >
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="index.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-home " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Home</span></a>
+        </li>
+        <li>
+          <a href="packages.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+		  <font color="white">
+          <i class="fa fa-cubes " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Packages</span></font></a>
+        </li>
+        <li>
+          <a href="planning.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Sort Planning</span></a>
+        </li>
+        <li>
+          <a href="visuals.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-area-chart " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Visuals </span> </a>
+        </li>
+        <li>
+          <a href="alerts.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span style="margin-left:10px;"> Alerts</span></a>
+        </li>
+        <li>
+          <a href="history.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span style="margin-left:10px;">History</span></a>
+        </li>
+        <li>
+          <a href="simple.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Simple</span></a>
+        </li>
+      </ul>
+      </div><!-- /sidebar-wrapper -->
+      
+      <!-- PAGE CONTENT START -->
+
+      <!-- TITLE -->
+      <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h3 class="section-heading">Simple</h3>
+          <hr>
+        </div>
+      </div>
+      
+      <!-- STATS -->
+      <div class="row">
+        <div class="col-sm-4"><b>Packages Incoming</b></div>
+        <div class="col-sm-4">10,000</div>
+        <div class="col-sm-4">
+            <img style="position:absolute; float: right" src="img/home/Visuals.png" class="home-img-responsive" alt="" width="320" height="320">
+        </div>
+      </div><br />
+      <div class="row">
+        <div class="col-sm-4"><b>Throughput</b></div>
+        <div class="col-sm-4">
+          <input type="text" id="text_throughput" value="10000" />
+          <input id="range_throughput" type="range" value="10000" oninput="update_throughput()"/>
+        </div>
+      </div><br />
+      <div class="row">
+        <div class="col-sm-4"><b>Start Time</b></div>
+        <div class="col-sm-4"><input type="time" value="08:00:00"/></div>
+      </div><br />
+
+      
+      <!-- PAGE CONTENT END  -->      
+    </div> <!-- /wrapper -->
+  </div> <!-- /container -->    
+</body>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/queryString.js"></script>
+
+<script src="js/simple.js"></script>
+
+<script> //insert current date into header
+	var today = new Date();
+	var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+ today.getFullYear();
+	
+	var curDate = document.getElementById("curDate");
+	curDate.innerHTML = "<p class='header-info'>Date: " + date + "</p>";
+</script>
+</html>
