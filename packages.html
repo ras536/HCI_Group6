@@ -122,63 +122,76 @@
 			</div>
 		</div>
       
+    <!-- INCOMING PACKAGES -->
+    <!-- https://developers.google.com/chart/interactive/docs/examples -->
+    <div id="div_table_incoming">
+    </div>    
+      
     <!-- Filter -->
     <div class="col-lg-12">
         <div class="row">
-          <div class="col-md-1"><h4 class="no-margin">Filter</h4></div>
-          
           <!-- STATION -->
-          <div class="col-md-2">
-            <b>Station</b>
-            <select id="filter_station">
-              <option value="ALL">ALL</option>
-              <option value="ABQA">ABQA</option>
-              <option value="FMNA">FMNA</option>
-              <option value="GUPA">GUPA</option>
-              <option value="SAFA">SAFA</option>
-            </select>
-          </div>
+          <table>
+          <tr>
+          <td><b>Source</b></td>
+          <td>
+          <select id="filter_station" style="width:100%">
+            <option value="ALL">ALL</option>
+            <option value="ABQA">ABQA</option>
+            <option value="FMNA">FMNA</option>
+            <option value="GUPA">GUPA</option>
+            <option value="SAFA">SAFA</option>
+          </td>
+          </select>
+          </tr>
+          
+          <!-- CARRIER NUMBER -->
+          <tr>
+          <td><b>Carrier #</b></td>
+          <td><input id="filter_number" type="text" value ="" oninput="filterChart()"/></td>
+          </tr>
           
           <!-- VOLUME -->
-          <div class="col-md-5">
-            <b>Max Volume</b>
-            <input id="filter_volume" type="text" value="20000" />
-          </div>
+          <tr>
+          <td><b>Max Volume</b></td>
+          <td><input id="filter_volume" type="text" value="20000" /></td>
+          </tr>
           
           <!-- TIME -->
-          <div class="col-md-2">
-            <b>Time</b>
-            <input id="filter_time"type="time" />
-          </div>
+          <tr>
+          <td><b>Arrival Time</b></td>
+          <td><input id="filter_time"type="time" style="width:100%"/></td>
+          </tr>
           
           <!-- STATUS -->
-          <div class="col-md-2">
-            <b>Status</b>
-            <select id="filter_status">
-              <option value="ANY">Any</option>
-              <option value="check">Ok</option>
-              <option value="triangle">Warning</option>
-              <option value="times">Error</option>
-            </select>
-          </div>
-          
-          <!-- BUTTONS -->
-          <div class="col-md-2">
-            <button id="btn_filter_apply" type="button float-left" onClick="filterChart()">Apply</button>
+          <tr>
+          <td><b>Status</b></td>
+          <td><select id="filter_status" style="width:100%">
+            <option value="ANY">Any</option>
+            <option value="check">Ok</option>
+            <option value="triangle">Warning</option>
+            <option value="times">Error</option>
+          </select>
+          </td>
+          <td>
+            <!-- BUTTONS -->
             <button id="btn_filter_clear" type="button float-left" onClick="clearFilter()">Clear</button>
-          </div>
+            <button id="btn_filter_apply" type="button float-left" onClick="filterChart()">Apply</button>
+          </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_package">Contact Station</button>
+            </td>
+          </tr>
+          </table>
+          
         </div>
       </div>
       <br /><br />
-      
-      <!-- INCOMING PACKAGES -->
-      <!-- https://developers.google.com/chart/interactive/docs/examples -->
-      <div id="div_table_incoming">
-      </div>    
-      
-      <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_package">Contact Station</button>
-      
+           
       <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
       <div id="modal_package" class="modal fade">
       <div class="modal-dialog" role="document">
