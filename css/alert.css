@@ -1,0 +1,68 @@
+/* The alert message box */
+.alert{
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+	font-size: 18px;
+	border-radius: 10px;
+}
+.alert-red {
+    background-color: #f44336;
+	background-color: rgba(244, 67, 54, 0.85);
+}
+.alert-orange {
+    background-color: #f49136;
+	background-color: rgba(244, 145, 54, 0.85);
+}
+.alert-green {
+    background-color: #29bb43;
+	background-color: rgba(41, 115, 187, 0.85);
+}
+.alert-text {
+	color: black;
+	font-weight: 700;
+}
+.fa-large {
+    display: inline-block;
+    font: normal normal normal 16px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-xl {
+    display: inline-block;
+    font: normal normal normal 24px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.right-float {
+	float: right;
+}
+.no-alerts {
+	color: #000;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+	background-color: transparent;
+	border: none;
+	outline:none;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+

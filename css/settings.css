@@ -1,0 +1,104 @@
+.btn-purple {
+  border: 2px solid transparent;
+  background: #4d148c;
+  color: #ffffff;
+  border: none;
+
+}
+
+.btn-purple:hover {
+  background-color: #5e2b97;
+  color: #fff;
+}
+
+.text-purple {
+	color: red;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #5e2b97;
+    border-color: #000;
+}
+    
+.settings {
+    margin-left:auto;
+    margin-right:auto;
+
+    max-width: auto;
+    background: #F8F8F8;
+    padding: 30px 30px 20px 30px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #666;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.settings h1 {
+    font-size: 36px;
+    padding: 10px 0px 10px 40px;
+    display: block;
+    margin: -30px -30px 10px -30px;
+    color: #FFF;
+    background: #4d148c;
+	font: bold;
+
+}
+.settings h1>span {
+    display: block;
+    font-size: 11px;
+    color: #FFF;
+}
+
+.settings label {
+    display: block;
+    margin: 0px 0px 5px;
+}
+.settings label>span {
+    float: left;
+	width: 20%;
+    margin-top: 10px;
+    color: #5E5E5E;
+}
+.settings input[type="text"], .settings input[type="email"], .settings input[type="password"], .settings textarea, .settings select {
+    color: #555;
+    height: 30px;
+    line-height:15px;
+    width: 80%;
+    padding: 0px 0px 0px 10px;
+    margin-top: 2px;
+    border: 1px solid #E5E5E5;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    font: normal 14px/14px Arial, Helvetica, sans-serif;
+}
+.settings textarea{
+    height:100px;
+    padding-top: 10px;
+	width: 80%;
+}
+.settings select {
+    background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+	background-position: 98% center;
+	background-repeat: no-repeat;
+    -webkit-appearance:none; 
+   -moz-appearance: none;
+    text-indent: 0.01px;
+    width:80%;
+    height:30px;
+}
+.settings .button {
+    background-color: #9DC45F;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-border-radius: 5px;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+}
+.settings .button:hover {
+    background-color:#80A24A;
+}

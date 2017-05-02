@@ -26,7 +26,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background-color:#660099 !Important;
+    background-color:#4d148c !Important;
    
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -75,7 +75,7 @@
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
-    background: #660099;
+    background: #4d148c;
 }
 
 .sidebar-nav li a:active,

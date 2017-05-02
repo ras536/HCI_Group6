@@ -13,6 +13,10 @@ hr {
     margin: 10px;
     padding: 0; 
 }
+h1 {
+	font-weight: bold;
+}
+h1,
 h2 { 
 	color: white;
 }
@@ -45,6 +49,7 @@ h5 {
   background-color: #876e97;
   color: #000;
 }
+
 td{
   text-align: center;
 }
@@ -64,7 +69,7 @@ input[type=range],output {
 	background-position: 95% center;
 }
 .bg-fedex-purple {
-    background-color: #660099
+    background-color: #4d148c
 }
 .img-center{
 	margin: 0 auto
@@ -81,7 +86,7 @@ input[type=range],output {
 	text-align: left;
 }
 .tr-border{ 
-  border: solid;
+  border-bottom: solid;
   border-width: 2px 0;
 }
 .fa2 {
@@ -103,6 +108,60 @@ input[type=range],output {
 .success {
 	font-size: 18px;
 }
+.float-right {
+	float: right;
+}
+.header-icon {
+	color: white;
+	margin:0 5px 0 5px;
+	
+}
+.header-info {
+	color: white;
+	font-size: 16px;
+	float: left;
+	margin: 0 0 0px; 
+}
+.login-boxes {
+	margin: 0 0 8px 0;
+}
+.no-margin {
+	margin: 0 0 0 0;
+}
+.station-textbox {
+	width : 60px;
+}
+/* Define how each icon button should look like */
+.alert-button {
+  color: white;
+  display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+  position: relative; /* All 'absolute'ly positioned elements are relative to this one */
+  padding: 2px 7px;; /* Add some padding so it looks nice */
+}
+.google-visualization-table {
+	border: 2px solid #000;
+}
+
+.google-visualization-table-type-number {
+	text-align: center !important;
+} 
+/* Make the badge float in the top right corner of the button */
+.button__badge {
+  background-color: #fa3e3e;
+  border-radius: 100%;
+  color: white;
+  padding: 3px 6px;
+  font-size: 12px;
+  position: absolute; /* Position the badge within the relatively positioned button */
+  top: 0;
+  right: 0;
+}
+.white-th {
+	color: white;
+}
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #e2e0e0;
+}
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* IDENTIFIERS                                                 */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -111,8 +170,13 @@ input[type=range],output {
   max-height: 525px;
   margin-bottom: 0.5em;
 }
-#table_sort_params,#div_home_packages,
-#table_home_expecs, #table_home_suggests{
+#home_suggests{
+	max-height: 250px;
+	margin-bottom: 0.0em;
+}
+#table_sort_params, #parameter_table,
+#employees_table, #table_planned_volume,
+#table_home_expecs, #home_suggests{
 	border:2px solid #000;
 }
 

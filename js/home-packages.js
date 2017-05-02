@@ -31,12 +31,12 @@ function makeIncomingPackage(){
     }
     
     // Time
-    var hour_random = Math.floor( Math.random()*12 + 1 ); // [1, 12]
+    var hour_random = Math.floor( Math.random()*5 + 1 ); // [1, 12]
     var minute_random = Math.floor( Math.random()*59 + 1 ); // [1, 12]
     if( minute_random < 10 ){
       minute_random = "0" + minute_random;
     }
-    var pm_random = Math.floor( Math.random()*2 ); // [0, 1]
+    var pm_random = Math.floor( Math.random()*0 ); // [0, 1]
     var text_ampm = "am";
     if( pm_random == 1 ){
       text_ampm = "pm";

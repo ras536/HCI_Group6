@@ -9,12 +9,19 @@ h3{
 /* Table */
 th{
   text-align:center;
-  background-color: #876e97;
+  background-color: #4d148c;
   color: #000;
 }
 
 td{
   text-align: center;
+}
+
+.volume-textbox {
+	width: 85px;
+}
+.filter-margin {
+	margin: 0 20px 0 0;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
