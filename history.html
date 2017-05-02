@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+    <link href="css/map278.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/history.css" rel="stylesheet">
+	<link href="css/user_dropdown.css" rel="stylesheet">
+	<link href="css/settings.css" rel="stylesheet">
+	
+	<!-- Imported Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<title>FedEx Ramp Dashboard</title>
+</head>
+
+<body>
+  <!-- Header -->
+	<div class="bg-fedex-purple">
+		<section id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center ">
+						<div class="col-xs-3">
+							<div class="row">
+								<h4>
+									<p class="header-info" id="userName">User: JDOE</p>
+								</h4>
+							</div>
+							<div class="row">
+								<h4 id="curDate"></h4>
+								
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<h1>FedEx Ramp Dashboard</h1>
+						</div>
+						<div class="col-xs-3">
+							<h2>
+								<a href = "alerts.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+									<div class="alert-button">
+										<i class="fa fa-exclamation-triangle"></i>
+										<span class="button__badge" id="button_badge">6</span>
+									</div>
+								</a>
+								<div id='cssmenu'>
+									<ul>
+										<li class="has-sub fa fa-user header-icon" aria-hidden="true">
+											<ul>
+												<li class='has-sub'><a data-toggle="modal" data-target="#settings_modal" href="#"><span>Settings</span></a></li>
+												<li class='has-sub'><a href='login.html'><span>Logout</span></a></li>	
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<p class="fa fa-download"></p>
+							</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+  <div class="container">
+    <div id="wrapper" class="toggled">
+      <!-- sidebar -->
+      <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" style="margin-left: 0">
+        <li class="sidebar-brand">
+          <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;" >
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="index.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-home " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Home</span></a>
+        </li>
+        <li>
+          <a href="packages.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-cubes " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Packages</span></a>
+        </li>
+        <li>
+          <a href="planning.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Sort Planning</span></a>
+        </li>
+        <li>
+          <a href="visuals.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-area-chart " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Visuals </span> </a>
+        </li>
+        <li>
+        <li>
+          <a href="alerts.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span style="margin-left:10px;"> Alerts</span></a>
+        </li>
+        <li>
+          <a href="history.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+		  <font color="white">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span style="margin-left:10px;">History</span></font></a>
+        </li>
+      </ul>
+      </div><!-- /sidebar-wrapper -->
+      
+      <!-- PAGE CONTENT START -->
+	  <div class = "container">
+		<div class="col-lg-12 text-center">
+			<h3 class="section-heading">Sort History</h3>
+			<hr>
+		</div>
+      
+      <div class="table-responsive col-lg-12">
+      <table id="table_sort_params" class="table table-striped">
+        <tr class="tr-border">
+          <th class="right history-th"><b>Average</b></th>
+          <th class="right history-th"><b>Last Week</b></th>
+          <th class="right history-th"><b>Prior Month</b></th>
+          <th class="right history-th"><b>Prior 3 Months</b></th>
+          <th class="right history-th"><b>Prior 6 Months</b></th>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Packages Per Sort</b></td>
+          <td align="right">13378</td>
+          <td align="right">14087</td>
+          <td align="right">14121</td>
+          <td align="right">16489</td>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Employee Count</b></td>
+          <td align="right">17.69</td>
+          <td align="right">17.02</td>
+          <td align="right">17.38</td>
+          <td align="right">16.89</td>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Flow Rate</b></td>
+          <td align="right">7456/hr</td>
+          <td align="right">7852/hr</td>
+          <td align="right">7749/hr</td>
+          <td align="right">7212/hr</td>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Completion Time</b></td>
+          <td align="right">6:52am</td>
+          <td align="right">6:49am</td>
+          <td align="right">6:46am</td>
+          <td align="right">6:55am</td>
+        </tr>
+        <tr class="tr-border">
+          <td align="right"><b>Late Sort Count</b></td>
+          <td align="right">2</td>
+          <td align="right">3</td>
+          <td align="right">6</td>
+          <td align="right">11</td>
+        </tr>
+      </table>
+      </div>
+	  </div>
+      <!-- PAGE CONTENT END  -->
+    </div> <!-- /wrapper -->
+  </div> <!-- /container -->
+  
+</body>
+
+    
+      <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
+      <div id="settings_modal" class="modal fade">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- HEADER -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span style="visibility:visible;">&times;</span>
+          </button>
+        </div>
+        <!-- BODY -->
+        <div class="modal-body settings">
+			<h1 class="text-center">Settings</h1>
+			<label>
+				<span style="visibility:visible;">User Name:</span>
+				<input id="settings_username" type="text" name="name" placeholder="User Name" value="ManagerJohn"/>
+			</label>
+			<label>
+				<span style="visibility:visible;">Email:</span>
+				<input id="settings_email" type="email" name="email" value="managerJohn@fedex.com" />
+			</label>
+			<label>
+				<span style="visibility:visible;">Password:</span>
+				<input id="settings_password" type="password" name="password" value="password" />
+			</label>
+			
+			 <label>
+				<span style="visibility:visible;">Time Zone:</span>
+				<select name="selection">
+					<option value="EST">Eastern Standard Time</option>
+					<option value="CST">Central Standard Time</option>
+					<option value="MST">Mountain Standard Time</option>
+					<option value="PST">Pacific Standard Time</option>
+				</select>
+			</label>      
+        </div>
+        <!-- FOOTER -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-purple" data-dismiss="modal" onclick="updateUser();">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </div>
+      </div>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/queryString.js"></script>
+  
+<!-- MAIN SCRIPT -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+
+
+
+</script>
+<script> //insert current date into header
+
+	var today = new Date();
+	var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+ today.getFullYear();
+	
+	var curDate = document.getElementById("curDate");
+	curDate.innerHTML = "<p class='header-info'>Date: " + date + "</p>";
+</script>
+<script>
+	function updateUser() {
+		var user = document.getElementById("settings_username").value;
+		var queries = "?username="+user+"&alertNum=6";
+		href="history.html";
+		location.href=this.href+queries;
+	}
+</script>
+
+</html>

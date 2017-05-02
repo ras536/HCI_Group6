@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+  <link href="css/map278.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/user_dropdown.css" rel="stylesheet">
+	<link href="css/settings.css" rel="stylesheet">
+	
+	<!-- Imported Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<title>FedEx Ramp Dashboard</title>
+  
+    <!--Load the AJAX API for Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+	<div class="bg-fedex-purple">
+		<section id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center ">
+						<div class="col-xs-3">
+							<div class="row">
+								<h4>
+									<p class="header-info" id="userName">User: JDOE</p>
+								</h4>
+							</div>
+							<div class="row">
+								<h4 id="curDate"></h4>
+								
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<h1>FedEx Ramp Dashboard</h1>
+						</div>
+						<div class="col-xs-3">
+							<h2>
+								<a href = "alerts.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+									<div class="alert-button">
+										<i class="fa fa-exclamation-triangle"></i>
+										<span class="button__badge" id="button_badge">6</span>
+									</div>
+								</a>
+								<div id='cssmenu'>
+									<ul>
+										<li class="has-sub fa fa-user header-icon" aria-hidden="true">
+											<ul>
+												<li class='has-sub'><a data-toggle="modal" data-target="#settings_modal" href="#"><span>Settings</span></a></li>
+												<li class='has-sub'><a href='login.html'><span>Logout</span></a></li>	
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<p class="fa fa-download"></p>
+							</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+  <div class="container">
+    <div id="wrapper" class = "toggled">
+      <!-- sidebar -->
+      <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" style="margin-left: 0">
+        <li class="sidebar-brand">
+          <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;" >
+          <i class="fa fa-bars " style="font-size:20px !Important;" aria-hidden="true" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="index.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-home " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Home</span></a>
+        </li>
+        <li>
+          <a href="packages.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+		  <font color="white">
+          <i class="fa fa-cubes " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Packages</span></font></a>
+        </li>
+        <li>
+          <a href="planning.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-sliders" aria-hidden="true"></i>
+          <span style="margin-left:10px;">Sort Planning</span></a>
+        </li>
+        <li>
+          <a href="visuals.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-area-chart " aria-hidden="true"></i>
+          <span style="margin-left:10px;">Visuals </span> </a>
+        </li>
+        <li>
+          <a href="alerts.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span style="margin-left:10px;"> Alerts</span></a>
+        </li>
+        <li>
+          <a href="history.html" onclick="location.href=this.href+'?'+queryStringParams;return false;">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          <span style="margin-left:10px;">History</span></a>
+        </li>
+      </ul>
+      </div><!-- /sidebar-wrapper -->
+      
+      <!-- PAGE CONTENT START -->
+	  <div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h3 class="section-heading">Packages</h3>
+				<hr>
+			</div>
+		</div>
+      
+    <!-- Filter -->
+    <div class="col-lg-12">
+        <div class="row">
+          <div class="col-md-1"><h4 class="no-margin">Filter</h4></div>
+          
+          <!-- STATION -->
+          <div class="col-md-2">
+            <b>Station</b>
+            <select id="filter_station">
+              <option value="ALL">ALL</option>
+              <option value="ABQA">ABQA</option>
+              <option value="FMNA">FMNA</option>
+              <option value="GUPA">GUPA</option>
+              <option value="SAFA">SAFA</option>
+            </select>
+          </div>
+          
+          <!-- VOLUME -->
+          <div class="col-md-5">
+            <b>Max Volume</b>
+            <input id="filter_volume" type="text" value="20000" />
+          </div>
+          
+          <!-- TIME -->
+          <div class="col-md-2">
+            <b>Time</b>
+            <input id="filter_time"type="time" />
+          </div>
+          
+          <!-- STATUS -->
+          <div class="col-md-2">
+            <b>Status</b>
+            <select id="filter_status">
+              <option value="ANY">Any</option>
+              <option value="check">Ok</option>
+              <option value="triangle">Warning</option>
+              <option value="times">Error</option>
+            </select>
+          </div>
+          
+          <!-- BUTTONS -->
+          <div class="col-md-2">
+            <button id="btn_filter_apply" type="button float-left" onClick="filterChart()">Apply</button>
+            <button id="btn_filter_clear" type="button float-left" onClick="clearFilter()">Clear</button>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      
+      <!-- INCOMING PACKAGES -->
+      <!-- https://developers.google.com/chart/interactive/docs/examples -->
+      <div id="div_table_incoming">
+      </div>    
+      
+      <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_package">Contact Station</button>
+      
+      <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
+      <div id="modal_package" class="modal fade">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- HEADER -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- BODY -->
+        <div class="modal-body">
+          <h4>Contact Station</h4>
+          <textarea style="width:100%;"></textarea><br />
+        </div>
+        <!-- FOOTER -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      <div class="spacex"><hr /></div>
+	  </div>
+      <!-- PAGE CONTENT END  -->      
+    </div> <!-- /wrapper -->
+  </div> <!-- /container -->    
+</body>
+
+      <!-- Reference: https://v4-alpha.getbootstrap.com/components/modal/ -->
+      <div id="settings_modal" class="modal fade">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- HEADER -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span style="visibility:visible;">&times;</span>
+          </button>
+        </div>
+        <!-- BODY -->
+        <div class="modal-body settings">
+			<h1 class="text-center">Settings</h1>
+			<label>
+				<span style="visibility:visible;">User Name:</span>
+				<input id="settings_username" type="text" name="name" placeholder="User Name" value="ManagerJohn"/>
+			</label>
+			<label>
+				<span style="visibility:visible;">Email:</span>
+				<input id="settings_email" type="email" name="email" value="managerJohn@fedex.com" />
+			</label>
+			<label>
+				<span style="visibility:visible;">Password:</span>
+				<input id="settings_password" type="password" name="password" value="password" />
+			</label>
+			
+			 <label>
+				<span style="visibility:visible;">Time Zone:</span>
+				<select name="selection">
+					<option value="EST">Eastern Standard Time</option>
+					<option value="CST">Central Standard Time</option>
+					<option value="MST">Mountain Standard Time</option>
+					<option value="PST">Pacific Standard Time</option>
+				</select>
+			</label>      
+        </div>
+        <!-- FOOTER -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-purple" data-dismiss="modal" onclick="updateUser();">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </div>
+      </div>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/queryString.js"></script>
+  
+<!-- MAIN SCRIPT -->
+<script src="js/packages.js"></script>
+
+<script> //insert current date into header
+	var today = new Date();
+	var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+ today.getFullYear();
+	
+	var curDate = document.getElementById("curDate");
+	curDate.innerHTML = "<p class='header-info'>Date: " + date + "</p>";
+</script>
+
+<script>
+	function updateUser() {
+		var user = document.getElementById("settings_username").value;
+		var queries = "?username="+user+"&alertNum=6";
+		href="packages.html";
+		location.href=this.href+queries;
+	}
+</script>
+</html>
